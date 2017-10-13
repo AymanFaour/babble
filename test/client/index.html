@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Test</title>
+    <link rel="stylesheet" href="../../node_modules/mocha/mocha.css" /> 
+    <script type="text/javascript" src="../../node_modules/mocha/mocha.js"></script> 
+    <script type="text/javascript" src="../../node_modules/chai/chai.js"></script> 
+    <script type="text/javascript" src="../../node_modules/sinon/pkg/sinon.js"></script>
+    <script type="text/javascript" src="../../client/scripts/main.js"></script>
+  </head>
+<body>
+<div id="mocha"></div>
+
+<script type="text/javascript"> mocha.setup('bdd'); </script>
+    <script type="text/javascript" src="test.js"></script>
+    <script> mocha.checkLeaks(); mocha.run(); </script>
+
+
+
+<!-- I added the html of the client because of the errors that can occur when all the functions 
+    triggered immediately on the onload event in the main.js -->
+
+<div style="display:none">
+    <div class="modal hidden">
+        
+        <div class="modal-content animate">
+            <h1>Who are you?</h1>
+            <label><b>Full name</b></label><br/>
+
+            <input class = "inputUsername" type="text" placeholder="Full name" required><br/>
+    
+            <label><b>Email</b></label><br/>
+            <input class = "inputEmailAddress" type="text" placeholder="Email" required><br/>
+            <span class="requiredField hidden">Both fields are required, you can stay anonymous if you want :)</span>
+            <div class = "buttons">
+                <button class = "anonymousButton">Stay Anonymous</button>
+                <button class = "saveButton">Save</button>
+            </div>
+
+        </div>
+        
+        
+    </div>
+
+
+    <header> 
+        <img class = "logo"  alt="babbleLogo"/>
+    
+        <div class = "chatStatus">
+        <h1> Vegans</h1> 
+        <dl> <dt> <img class = "messageLogo" alt="numberOfActiveUsers"> </dt> <dd> 0</dd> 
+            <dt> <img class = "userLogo" alt="numberOfMessages"> </dt>       <dd> 0 </dd> 
+        </dl>
+        </div>
+    </header>
+
+    <nav>
+    </nav>
+
+    <main>
+        <ol>  </ol>
+
+        <form>
+            <div class = "inputDiv">
+                <div class="inputMessageDiv">
+                    <pre><span></span><br></pre>
+                    <textarea></textarea>
+                </div>
+            </div>
+            <div class = "buttonDiv">
+                <button> <img aria-label="sendMessageButton" alt = "sendMessageButton"> </button>
+            </div>
+        </form>
+    </main> 
+</div>
+
+
+</body>
+</html>

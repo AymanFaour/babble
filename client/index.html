@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegans - Babble</title>
+    <link href="styles/main.css" rel="stylesheet">
+    <script async src="scripts/main.js"> </script>
+</head>
+<body>
+
+    <div class="modal hidden">     
+        <div class="modalContent animate">
+            <h1>Who are you?</h1>
+            <label><b>Full name</b></label><br/>
+            <input class = "inputUsername" type="text" placeholder="Full name" aria-label="enter your username" required><br/>
+            <label><b>Email</b></label><br/>
+            <input class = "inputEmailAddress" type="text" placeholder="Email" aria-label="enter your email" required><br/>
+            <span class="requiredField hidden">Both fields are required, you can stay anonymous if you want :)</span>
+            <div class = "buttons">
+                <button class = "anonymousButton" aria-label="stayAnonymous">Stay Anonymous</button>
+                <button class = "saveButton" aria-label="saveUserInfo">Save</button>
+            </div>
+        </div>
+    </div>
+        
+    <header> 
+        <img class = "logo" src="images/babbleLogoMobile.png" alt="babbleLogo"/>
+       
+        <div class = "chatStatus">
+        <h1> Vegans</h1> 
+        <dl> <dt> <img src="images/howManyMessagesLogo.png" class = "messageLogo" alt="numberOfActiveUsers"> </dt> <dd> 0</dd> 
+             <dt> <img src="images/howManyUsersLogo.png" class = "userLogo" alt="numberOfMessages"> </dt>       <dd> 0 </dd> 
+        </dl>
+        </div>
+    </header>
+   
+    <nav>
+    </nav>
+
+    <main>
+        <ol>
+        </ol>
+            <div class = "inputDiv">
+                <div class="inputMessageDiv">
+                    <pre><span></span><br></pre>
+                    <textarea aria-label="enter your message"></textarea>
+                </div>
+            </div>
+            <div class = "buttonDiv">
+                <button> <img src="images/sendButton.png" aria-label="sendMessageButton" alt = "sendMessageButton"> </button>
+            </div>
+    </main> 
+
+</body>
+</html>

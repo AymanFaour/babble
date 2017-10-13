@@ -1,0 +1,6 @@
+- I assumed that delete is in real time, so you don't have to refresh the page in order to see the result of pressing the delete button.
+- opening a TAB increment the users in the stats by one, and closing it doesn't decrement it by 1, only exiting the whole browser will 
+decrement (each tab is the same person of course), I did that because there is no way distinguishing users who are anonymous so 
+I used the simple functons: "onbeforeunload" and "onload" to decrement and increment. if I had a way to differentiate two anonymous 
+I would gladly add users util (as in messages util) to manage the users, but sense we are not allowed to add anything to the anonymous 
+userInfo fields I was forced to increment and decrement using those simple two functions. so i had to add it in the assumptions.

@@ -1,0 +1,26 @@
+{
+  "name": "babble",
+  "version": "1.0.0",
+  "description": "Responsive chat",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha-chrome": "^0.2.1",
+    "sinon": "^3.3.0",
+    "wicg-inert": "^1.1.4"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "mocha": "^3.5.3"
+  },
+  "scripts": {
+    "start": "concurrently \"node server/main.js\" \"http-server -p 8080\" ",
+    "test": "mocha test/server/test.js && http-server -a localhost -p 8081"
+  },
+  "author": "Ayman Faour",
+  "license": "ISC"
+}
