@@ -1,0 +1,795 @@
+/******** Main CSS File *******/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    height:100%; 
+    width:100%;
+    overflow-y:auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+/****************************************************** MODAL *****************************************************/
+
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 1vh 1.5vw; 
+    margin: 1.2vh 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 7vh;
+    font-weight: 700;
+    font-size: 2.5vh;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+}
+
+
+.modal button {
+    background-color: #79d34e;
+    color: white;
+    padding: 1vh 2vw;
+    margin: 0px 0px;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    font-size: 2vh;
+}
+
+.modal .buttons .anonymousButton{
+    background-color: #cccccc;
+    color: black;
+}
+
+.modal .buttons{
+    float: left;
+    position: absolute;
+    bottom: 8vh;
+    right: 4vw;
+}
+
+.modal button:hover {
+    opacity: 0.8;
+}
+
+.modal h1{
+    margin-bottom: 7vh;
+    font-size: 4vh;
+    font-weight: 400;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modalContent {
+    padding-left: 4vw;
+    padding-top: 8vh;
+    background-color: #f6f6f6;
+    /*margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    position:relative;
+    top:10%;
+    bottom: 10%;
+    height: 80%;
+    left:30%;
+    width:40%;
+    border: 1px solid #888;
+    font-size: 3vh;
+}
+
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.requiredField{
+    color:red;
+    font-weight: 700;
+}
+
+/****************************************************** MODAL *****************************************************/
+
+
+/************* general css for HEADER *************/
+header{
+    width:100%;
+    position:absolute; 
+    top:0; 
+    left:0; 
+    right:0;
+    background-color: #343643;
+    overflow:hidden;
+}
+
+.chatStatus{
+    position: absolute;
+    width: 100%;
+}
+
+header h1{
+    position: absolute;
+    text-align: left;
+    color:  #292929;
+    font-weight: 400;
+}
+
+header dl{
+    position: absolute;
+    float: right;
+    font-weight: 700;
+}
+
+header dl dd, header dl dt{
+    float: left;
+    
+}
+
+header dl img{
+    margin: 0;
+}
+
+/************* general css for HEADER *************/
+
+main{
+    position: absolute;
+    overflow-y:hidden;
+    overflow-x: hidden;
+}
+
+
+main ol{
+    list-style-type: none;
+}    
+
+main ol li{
+    width: 100%;
+    clear: left;
+}
+
+main ol img{
+    float: left;
+    border-radius: 50%;
+}
+
+main ol .message{
+    width: auto;
+    float: left;
+    height: auto;
+    word-wrap: break-word;
+}
+
+main ol button{
+    float: right;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+
+.inputMessageDiv textarea:focus, .inputMessageDiv button:focus{
+    outline: none;
+}
+
+@media screen and (min-width: 638px) {
+    
+    body{
+        background-color: #f4f4f4;
+    }
+
+    input[type=text], input[type=password] {
+        width: 80%;
+    }
+
+    /************* desktop css for HEADER *************/
+
+    header{
+        height: 22vh;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .logo{
+        margin:0;
+        height: 12vh;
+        width: auto;
+        margin-left: 1vw;
+        margin-top: 2vh;
+        margin-bottom: 0;
+    }
+
+    .chatStatus{
+        top: 16vh;
+        height: 6vh;
+        background-color: #f4f4f4;
+    }
+
+    header h1{
+        bottom: 0;
+        padding: 0;
+        margin:0;
+        background-color: #f4f4f4;
+        left: 18vw;
+        font-size: 4vh;
+        margin-left: 1vw;
+    }
+
+    header dl{
+        bottom: 0;
+        background-color: #f4f4f4;
+        right: 3vw;
+        font-size: 3vh;
+    }
+
+
+    header dl img{
+        margin-right: 0.2vw;
+        margin-left: 0.7vw;
+    }
+
+    .messageLogo{
+        width: auto;
+        height: 2vh;
+    }
+
+    .userLogo{
+        width: auto;
+        height: 2.6vh;
+    }
+
+    /************* desktop css for HEADER *************/
+    
+
+    /************* desktop css for NAV *************/
+    
+    nav{
+        position: absolute;
+        bottom:0;
+        width:18vw;
+        background-color: #5fd08f;
+        left:0; 
+        right:0; 
+        height: 84vh;
+    }
+
+    /************* desktop css for NAV *************/
+    
+
+    /************* desktop css for MAIN *************/
+
+    main{
+        top: 22vh;
+        bottom: 0; 
+        left: 18vw;
+        width: 82vw;
+        height: 78vh;
+    }
+
+    main ol{
+        margin-left: 2vw;
+        width:97%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 62vh;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+    }    
+    
+    main ol li{
+        width: 72vw;
+        padding-top: 1vh;
+    }
+    
+    main ol img{
+        width: 5.5vh;
+        height: 5.5vh;
+        margin-right: 1.4vw;
+        alt: "";
+    }
+    
+    main ol .message{
+        width: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        max-width: 600px;
+        padding: 1vh 1vh 1vh 1vh;
+        border-radius: 9px;
+        border-style: solid;
+        border-width: 1px;
+        border-color:  #d7d7d7;
+        background-color:  #ffffff;
+    }
+
+    main ol .message div{
+        height: 0vh;
+    }
+    
+    main ol cite{
+        color:  #202729;
+        font-size: 2.5vh;
+        font-weight: 700;
+        text-align: right;
+        
+    }
+    
+    main ol time{
+        padding-left: 2vh;
+        color:  #999999;
+        font-size: 1.5vh;
+        font-weight: 400;
+        text-align: left;
+    }
+    
+    main ol button{
+        width: 1.6vh;
+        height: 1.6vh;
+        margin-top: 1vh;
+        background-color: #ebedec;
+    }
+
+    main ol button img{
+        width: 1.6vh;
+        height: 1.6vh;
+    }
+    
+    main ol span{
+        color:  #616161;
+        font-size: 2.3vh;
+        font-weight: 400;
+        text-align: left;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    
+
+        
+    .inputDiv{
+        height:15vh; 
+        left:0;
+        border-top: 1px solid #dadada; 
+        border-bottom: 1px solid #dadada;
+        background-color: #f9f9f9;
+        margin: 0;
+        width: 80%;
+    }
+
+    .inputDiv{
+        position: absolute; 
+        bottom:0;
+        right:0; 
+        overflow:hidden;
+        max-height: 300px;
+    }
+
+    .inputMessageDiv textarea:focus, .inputMessageDiv button:focus{
+        outline: none;
+    }
+
+    .inputMessageDiv{
+        bottom: 0;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        max-height: 300px;
+    }
+
+    .inputMessageDiv textarea,
+    .inputMessageDiv pre{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:  'Nunito', sans-serif;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 0.5em;
+        color: #616161;
+        font-size: 2.3vh;
+        font-weight: 400;
+        background: #f9f9f9;
+    }
+
+    .inputMessageDiv textarea{
+        width: 100%;
+        resize: none;
+        border: none;
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%;
+        overflow: visible;
+    }
+
+    .buttonDiv{
+        position: absolute;
+        bottom:0;
+        left: 80%;
+        width: 20%;
+        height: 15vh;
+        background-color: #f9f9f9;
+        max-height: 300px;
+        border-top: 1px solid #dadada; 
+        border-bottom: 1px solid #dadada;
+    }
+
+    .buttonDiv button{
+        padding: 0;
+        float: right;
+        background-color: #f9f9f9;
+        border: none;
+        background-repeat: no-repeat;
+    }
+
+    .buttonDiv img{
+        padding:0;
+        background-color:#f9f9f9;
+        margin-top: 3.5vh;
+        margin-right:2vw;
+        width: 8vh;
+        height: 8vh;
+    }
+
+
+    /************* desktop css for MAIN *************/
+
+    /************* desktop css for scrollbar *************/
+    
+    ol::-webkit-scrollbar{
+        width: 0.9vw;
+        border-radius: 10px;
+        background-color: #ffffff;
+        border: 1px solid #d7d7d7;
+    }
+
+    ol::-webkit-scrollbar-track{
+        
+        border-radius: 10px;
+        background-color: #ffffff;
+        border: 1px solid #d7d7d7;
+    }
+    
+    ol::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #e9ebea;
+        border: 1px solid #d7d7d7;
+    }
+    
+    /************* desktop css for scrollbar *************/
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 638px) {
+    body{    
+	    background-color: #f6f6f6;
+    }
+
+    .modalContent{
+        left:15%;
+        width:70%;
+    }
+   
+    /************* mobile css for HEADER *************/
+
+    header{
+        height: 24.5vh;
+    }
+    
+    .logo{
+        height: 13vh;
+        width: auto;
+        margin-left:3vw;
+        margin-top: 2vh;
+    }
+
+    .chatStatus{
+        top: 17vh;
+        background-color: #f6f6f6;
+        height: 8vh;
+    }
+
+    header h1{
+        background-color: #f6f6f6;
+        bottom: 0.3vh;
+        left: 6vw;
+        font-size: 5vh;
+    }
+
+    header dl{
+        background-color: #f6f6f6;
+        bottom: 0.3vh;
+        right: 8vw;
+        font-size: 3vh;
+    }
+
+
+    header dl img{
+        margin-right: 1vw;
+        margin-left: 2vw;
+    }
+
+    .messageLogo{
+        width: auto;
+        height: 2.5vh;
+    }
+
+    .userLogo{
+        width: auto;
+        height: 3.2vh;
+    }
+
+    /************* mobile css for HEADER *************/
+
+    /************* mobile css for NAV *************/
+
+    nav{
+        width:0%;
+    }
+
+    /************* mobile css for NAV *************/
+
+    /************* mobile css for MAIN *************/
+
+    main{
+        top:25vh;
+        bottom:17vh; 
+        left:0; 
+        right:0;
+        margin-right:6vw;
+        height:75vh;
+    }
+
+    main ol{
+        height: 58vh;
+        width:93%;
+        margin-left: 6vw;
+        list-style-type: none;
+        overflow-y: auto;
+        overflow-x: hidden;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+    }    
+
+    main ol li{
+        width: 95%;
+        padding-top: 1vh;
+    }
+
+    main ol img{
+        width: 8vh;
+        height: 8vh;
+        float: left;
+    }
+
+    main ol .message{
+        width: auto;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        margin-left: 3vw;
+        float: left;
+        border-radius: 18px;
+        border-style: solid;
+        border-width: 0.2px;
+        border:  1px solid #d7d7d7;
+        background-color:  #ffffff;
+        height: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    main ol cite{
+        color:  #202729;
+        font-size: 2.9vh;
+        font-weight: 700;
+        text-align: right;
+        
+    }
+
+    main ol time{
+        padding-left: 2vw;
+        color:  #999999;
+        font-size: 	1.8vh;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    main ol button{
+        float: right;
+        width: 2vh;
+        height: 2vh;
+        margin-top: 1vh;
+        background-repeat: no-repeat;
+        background-color: #ebedec;
+        border: none;
+    }
+
+    main ol button img{
+        width: 2vh;
+        height: 2vh;
+    }
+
+    .message div{
+        height:0.5vh;
+    }
+
+    main ol span{
+        color:  #616161;
+        font-size: 2.6vh;
+        font-weight: 400;
+        line-height: 2.6vh;
+        text-align: left;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    /************* mobile css for MAIN *************/
+
+    .inputDiv{
+        height:12vh; 
+        left: 8vw;
+        margin: 0;
+        width: 70%;
+    }
+    
+    .inputDiv{
+        position: absolute; 
+        bottom:2vh;
+        right:0;
+    }
+    
+    .inputMessageDiv textarea:focus, .inputMessageDiv button:focus{
+        outline: none;
+    }
+    
+    .inputMessageDiv{
+        bottom: 0;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #dadada;
+        border-radius: 18px;
+    }
+    
+    .inputMessageDiv textarea,
+    .inputMessageDiv pre{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+	    font-family:  'Nunito', sans-serif;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 1vw;
+        color: #616161;
+        /*font-size: 0.9375rem;*/
+        font-size: 2.4vh;
+        font-weight: 400;
+        background-color: #ffffff;
+        height: 12vh;
+        width:100%;
+        border-radius: 18px;
+    }
+    
+    .inputMessageDiv textarea{
+        width: 100%;
+        resize: none;
+        border: none;
+        position: absolute;
+        top: 0; left: 0;
+        overflow: visible;
+    }
+    
+    .buttonDiv{
+        position: absolute;
+        bottom:0;
+        left: 88%;
+        width: 12%;
+        height: 14vh;
+        background-color: #f6f6f6;
+    }
+    
+    .buttonDiv button{
+        padding: 0;
+        float: right;
+        border: none;
+        background-repeat: no-repeat;
+        background-color: #f6f6f6;
+    }
+    
+    .buttonDiv img{
+        padding:0;
+        margin-top: 1.5vh;
+        margin-right:2vw;
+        width: 9vh;
+        height: 9vh;
+        background-color: #f6f6f6;
+    }
+    
+
+    /************* mobile css for scrollbar *************/
+    
+    ol::-webkit-scrollbar{
+        width: 1.9vw;
+        border-radius: 10px;
+        background-color: #ffffff;
+        border: 1px solid #d7d7d7;
+    }
+    ol::-webkit-scrollbar-track{
+        
+        border-radius: 10px;
+        background-color: #ffffff;
+        border: 1px solid #d7d7d7;
+    }
+    ol::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #e9ebea;
+        border: 1px solid #d7d7d7;
+    }
+    
+    /************* mobile css for scrollbar *************/
+}
+
+.hidden {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
