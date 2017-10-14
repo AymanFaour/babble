@@ -434,41 +434,65 @@
     }
     
     function getMessagesCallbackFunction(e){
-        Babble.messageCounter = Babble.messageCounter + e.addedMessages;
-        for(var i = 0; i < e.updatedMessages.length; i ++){
-            messageBuildAndAppend(e.updatedMessages[i]);
-        }
-        setTimeout(function(){
-            var ol = document.getElementsByTagName("ol")[0];
-            ol.scrollTop = ol.scrollHeight;
+        console.log("get messages response");
+        console.log(e);
+        if(e.length == 0){
+            console.log(e);
             Babble.getMessages(Babble.messageCounter, getMessagesCallbackFunction);
-        },10);
+        }
+        else{
+            Babble.messageCounter = Babble.messageCounter + e.addedMessages;
+            for(var i = 0; i < e.updatedMessages.length; i ++){
+                messageBuildAndAppend(e.updatedMessages[i]);
+            }
+            setTimeout(function(){
+                var ol = document.getElementsByTagName("ol")[0];
+                ol.scrollTop = ol.scrollHeight;
+                Babble.getMessages(Babble.messageCounter, getMessagesCallbackFunction);
+            },10);
+        }
     }
     
     function postMessagesCallbackFunction(e){
     }
     
     function getStatsCallbackFunction(e){
-        document.getElementsByTagName("dl")[0].getElementsByTagName("dd")[0].innerHTML = "" + e.allMessagesLength;
-        document.getElementsByTagName("dl")[0].getElementsByTagName("dd")[1].innerHTML = "" + e.usersCounter;
-        setTimeout(function(){
+        console.log("get stats response");
+        console.log(e);
+        if(e.length == 0){
+            console.log(e);
             Babble.getStats(getStatsCallbackFunction);
-        },20);
+        }
+        else{
+            document.getElementsByTagName("dl")[0].getElementsByTagName("dd")[0].innerHTML = "" + e.allMessagesLength;
+            document.getElementsByTagName("dl")[0].getElementsByTagName("dd")[1].innerHTML = "" + e.usersCounter;
+            setTimeout(function(){
+                Babble.getStats(getStatsCallbackFunction);
+            },20);
+        }
     }
     
     function deleteMessageCallbackFunction(e){
-        var li = document.getElementById("message#" + e.id);
-        if(li){
-            li.parentNode.removeChild(li);
-            Babble.messageCounter = Babble.messageCounter-1;
-            setTimeout(function(){
-                Babble.deleteMessage(-1, deleteMessageCallbackFunction);
-            },200)
-            
+        console.log("get delete response");
+        console.log(e);
+        if(e.length == 0){
+            console.log(e);
+            Babble.deleteMessage(-1, deleteMessageCallbackFunction);
         }
-        setTimeout(function(){
-            Babble.onClickFlag = 0;
-        },300);
+        else{
+            var li = document.getElementById("message#" + e.id);
+            if(li){
+                li.parentNode.removeChild(li);
+                Babble.messageCounter = Babble.messageCounter-1;
+                setTimeout(function(){
+                    Babble.deleteMessage(-1, deleteMessageCallbackFunction);
+                },200)
+                
+            }
+            setTimeout(function(){
+                Babble.onClickFlag = 0;
+            },300);
+        }            
     }
     
     function convertLongToTime(date){
