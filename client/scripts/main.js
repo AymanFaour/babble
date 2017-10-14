@@ -511,7 +511,6 @@
     }
 
     function firstLoadGetStatsCallbackFunction(e){
-        console.log(e);
         document.getElementsByTagName("dl")[0].getElementsByTagName("dd")[0].innerHTML = "" + e.allMessagesLength;
         document.getElementsByTagName("dl")[0].getElementsByTagName("dd")[1].innerHTML = "" + e.usersCounter;
     }
