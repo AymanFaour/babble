@@ -42,8 +42,6 @@ usersCounter = 0;
                             }
                             else{
                                 var d = new Date();
-                                console.log(d.getTime());
-                                console.log("that was the time");
                                 pendingGetMessagesClients.push({response: response, counter: data.counter, timestamp: d.getTime()});
                             }
                         }
@@ -62,8 +60,6 @@ usersCounter = 0;
                 if(url.href == '/stats'){
                     response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
                     var d = new Date();
-                    console.log(d.getTime());
-                    console.log("that was the time");
                     pendingGetStatsClients.push({response: response, timestamp: d.getTime()});
                 }
                 else if(url.href == '/incrementuserscounter'){
@@ -159,8 +155,6 @@ usersCounter = 0;
                     var id = url.href.substr(index, url.href.length);
                     if(id == -1){
                         var d = new Date();
-                        console.log(d.getTime());
-                        console.log("that was the time");
                         pendingDeletingClients.push({response: response, timestamp: d.getTime()});
                     }
                     else{
@@ -199,10 +193,8 @@ usersCounter = 0;
     console.log('server is listening at port 9000');
     
     setInterval(function(){
-        var expiration = 20000;
+        var expiration = 60000;
         var d = new Date();
-        console.log("ayman hello from set interval");
-        console.log(d.getTime());
         for(var i = 0; i < pendingGetMessagesClients.length; i ++){
             var client = pendingGetMessagesClients[i];
             if(d.getTime() - client.timestamp >= expiration){
@@ -224,7 +216,7 @@ usersCounter = 0;
                 pendingGetStatsClients.splice(i,1);
             }
         }
-    }, 10000);
+    }, 30000);
 
     var MD5 = function (string) {
         

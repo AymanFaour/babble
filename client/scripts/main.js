@@ -434,10 +434,7 @@
     }
     
     function getMessagesCallbackFunction(e){
-        console.log("get messages response");
-        console.log(e);
         if(e.length == 0){
-            console.log(e);
             Babble.getMessages(Babble.messageCounter, getMessagesCallbackFunction);
         }
         else{
@@ -457,10 +454,7 @@
     }
     
     function getStatsCallbackFunction(e){
-        console.log("get stats response");
-        console.log(e);
         if(e.length == 0){
-            console.log(e);
             Babble.getStats(getStatsCallbackFunction);
         }
         else{
@@ -473,10 +467,7 @@
     }
     
     function deleteMessageCallbackFunction(e){
-        console.log("get delete response");
-        console.log(e);
         if(e.length == 0){
-            console.log(e);
             Babble.deleteMessage(-1, deleteMessageCallbackFunction);
         }
         else{
