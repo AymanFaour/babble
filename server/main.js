@@ -41,7 +41,10 @@ usersCounter = 0;
                                 response.end(JSON.stringify(theRespone));
                             }
                             else{
-                                pendingGetMessagesClients.push({response: response, counter: data.counter});
+                                var d = new Date();
+                                console.log(d.getTime());
+                                console.log("that was the time");
+                                pendingGetMessagesClients.push({response: response, counter: data.counter, timestamp: d.getTime()});
                             }
                         }
                         else{
@@ -58,7 +61,10 @@ usersCounter = 0;
             else{
                 if(url.href == '/stats'){
                     response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-                    pendingGetStatsClients.push({response: response});
+                    var d = new Date();
+                    console.log(d.getTime());
+                    console.log("that was the time");
+                    pendingGetStatsClients.push({response: response, timestamp: d.getTime()});
                 }
                 else if(url.href == '/incrementuserscounter'){
                     usersCounter++;
@@ -152,7 +158,10 @@ usersCounter = 0;
                     if(url.href.indexOf(":")!= -1 && url.href.indexOf(":") == 10) index = index + 1;
                     var id = url.href.substr(index, url.href.length);
                     if(id == -1){
-                        pendingDeletingClients.push({response: response});
+                        var d = new Date();
+                        console.log(d.getTime());
+                        console.log("that was the time");
+                        pendingDeletingClients.push({response: response, timestamp: d.getTime()});
                     }
                     else{
                         if(id.match(/^[0-9]+$/) != null){
@@ -189,6 +198,33 @@ usersCounter = 0;
     server.listen(9000);
     console.log('server is listening at port 9000');
     
+    setInterval(function(){
+        var expiration = 20000;
+        var d = new Date();
+        console.log("ayman hello from set interval");
+        console.log(d.getTime());
+        for(var i = 0; i < pendingGetMessagesClients.length; i ++){
+            var client = pendingGetMessagesClients[i];
+            if(d.getTime() - client.timestamp >= expiration){
+                client.response.end(JSON.stringify([]));
+                pendingGetMessagesClients.splice(i,1);
+            }
+        }
+        for(var i = 0; i < pendingDeletingClients.length; i ++){
+            var client = pendingDeletingClients[i];
+            if(d.getTime() - client.timestamp >= expiration){
+                client.response.end(JSON.stringify([]));
+                pendingDeletingClients.splice(i,1);
+            }
+        }
+        for(var i = 0; i < pendingGetStatsClients.length; i ++){
+            var client = pendingGetStatsClients[i];
+            if(d.getTime() - client.timestamp >= expiration){
+                client.response.end(JSON.stringify([]));
+                pendingGetStatsClients.splice(i,1);
+            }
+        }
+    }, 10000);
 
     var MD5 = function (string) {
         
